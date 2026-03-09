@@ -149,7 +149,7 @@ window.PRODUCTS = [
     story: 'O Neve Paris traz uma elegância urbana de inverno. O branco estruturado ilumina o visual, enquanto o vermelho interno acrescenta personalidade e profundidade ao look.',
     gallery: [
       { type: 'image', src: 'assets/media/products/casaco-neve-paris/editorial.jpg', alt: 'Casaco Neve Paris em foto editorial' },
-	  { type: 'video', src: 'assets/media/products/casaco-neve-paris/movimento.mp4', poster: 'assets/media/products/casaco-neve-paris/editorial.jpg', alt: 'Vídeo do Casaco Neve Paris' }
+	  { type: 'video', src: 'assets/media/products/casaco-neve-paris/desfile.mp4', poster: 'assets/media/products/casaco-neve-paris/editorial.jpg', alt: 'Vídeo do Casaco Neve Paris' }
     ]
   },
   {
