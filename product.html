@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Produto | Thais Mahasin</title>
+  <meta name="description" content="Página de detalhe do produto com imagens, vídeo, informações e consulta via WhatsApp." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/shop.css" />
+
+  <style>
+    :root {
+      --gold: #C9A84C;
+      --gold-light: #E8D08A;
+      --gold-dark: #A8872E;
+      --gold-pale: #F5EDD4;
+      --text: #1A1612;
+      --line: rgba(201,168,76,0.2);
+    }
+
+    .topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      transition: all 0.4s ease;
+    }
+
+    .topbar.scrolled {
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 2px 40px rgba(26,22,18,0.07);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      height: 80px;
+      gap: 24px;
+    }
+
+    .nav-logo img,
+    .header-logo {
+      height: 75px;
+      width: auto;
+      max-width: 240px;
+      object-fit: contain;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+      min-width: 0;
+    }
+
+    .nav-links a {
+      white-space: nowrap;
+      line-height: 1;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-dark);
+    }
+
+    .nav-links a:hover::after {
+      transform: scaleX(1);
+    }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+
+    .hamburger span {
+      width: 24px;
+      height: 1.5px;
+      background: var(--text);
+      transition: all 0.3s;
+      display: block;
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(255,255,255,0.98);
+      backdrop-filter: blur(20px);
+      z-index: 998;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+    }
+
+    .mobile-menu.open {
+      display: flex;
+    }
+
+    .mobile-menu a {
+      font-size: 1.5rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      color: var(--text);
+      letter-spacing: 0.05em;
+    }
+
+    .mobile-menu-close {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      background: none;
+      border: none;
+      font-size: 1.6rem;
+      cursor: pointer;
+      color: #5A5045;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links,
+      .nav-cta {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+  </style>
+
+</head>
+<body>
+
+<nav class="mobile-menu" id="mobileMenu" aria-label="Menu mobile">
+  <button class="mobile-menu-close" onclick="closeMobileMenu()">✕</button>
+  <a href="index.html#sobre" onclick="closeMobileMenu()">Sobre</a>
+  <a href="index.html#servicos" onclick="closeMobileMenu()">Serviços</a>
+  <a href="index.html#sob-medida" onclick="closeMobileMenu()">Sob Medida</a>
+  <a href="index.html#depoimentos" onclick="closeMobileMenu()">Depoimentos</a>
+  <a href="index.html#faq" onclick="closeMobileMenu()">FAQ</a>
+  <a href="index.html#contato" onclick="closeMobileMenu()">Contato</a>
+  <a class="btn btn-wa" href="#" data-wa-link target="_blank" rel="noopener">
+    <span>Fale Conosco</span>
+  </a>
+</nav>
+
+<header class="topbar" id="topbar">
+  <div class="container">
+    <nav class="nav">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/img/logo/logo.png" alt="Thais Mahasin" class="header-logo" />
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html#sobre">Sobre</a></li>
+        <li><a href="index.html#servicos">Serviços</a></li>
+        <li><a href="index.html#sob-medida">Sob Medida</a></li>
+        <li><a href="index.html#depoimentos">Depoimentos</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="index.html#contato">Contato</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a class="btn btn-outline" href="index.html#contato">
+          <span>Orçamento</span>
+        </a>
+        <a class="btn btn-gold" href="#" data-wa-link data-wa-text="Olá! Gostaria de atendimento." target="_blank" rel="noopener">
+          <span>WhatsApp</span>
+        </a>
+      </div>
+
+      <button class="hamburger" onclick="openMobileMenu()" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="product-page">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a> / <a href="pronta-entrega.html">Pronta entrega</a> / <span id="productNameBreadcrumb">Produto</span>
+      </div>
+      <div class="product-layout" id="productContent"></div>
+
+      <section class="related">
+        <h3>Outras peças do catálogo</h3>
+        <div class="related-grid" id="relatedProducts"></div>
+      </section>
+    </div>
+  </section>
+</main>
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <div class="lightbox-content">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Fechar">✕</button>
+    <button class="lightbox-prev" id="lightboxPrev" aria-label="Anterior">‹</button>
+    <img id="lightboxImg" alt="Imagem ampliada do produto" />
+    <button class="lightbox-next" id="lightboxNext" aria-label="Próxima">›</button>
+  </div>
+</div>
+
+<div class="floating-wa">
+  <a href="#" data-wa-link data-wa-text="Olá! Quero atendimento." target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/img/logo/logo_footer.png" alt="Thais Mahasin" class="footer-logo" />
+        <p>Moda feminina exclusiva com peças prontas e sob medida. Elegância, qualidade e atendimento verdadeiramente personalizado.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="index.html#sobre">Sobre</a></li>
+          <li><a href="index.html#servicos">Serviços</a></li>
+          <li><a href="pronta-entrega.html">Pronta Entrega</a></li>
+          <li><a href="index.html#sob-medida">Sob Medida</a></li>
+          <li><a href="index.html#depoimentos">Depoimentos</a></li>
+          <li><a href="index.html#contato">Contato</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="#" data-wa-link data-wa-display target="_blank">(21) 99631-3804</a></li>
+          <li><a href="#" data-email-link data-email-display>contato@thaismahasin.com.br</a></li>
+          <li><a href="#" data-instagram-link data-instagram-display target="_blank">@thais_mahasin</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Thais Mahasin. Todos os direitos reservados.</p>
+      <p>Feito com <span style="color:var(--gold-light)">♥</span> para mulheres únicas</p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/products.js"></script>
+<script src="assets/js/product.js"></script>
+</body>
+</html>
