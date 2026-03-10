@@ -389,7 +389,7 @@ button, input, select { font: inherit; }
 }
 .toolbar-grid {
   display: grid;
-  grid-template-columns: 1.2fr .8fr;
+  grid-template-columns: 1fr auto;
   gap: 24px;
   align-items: end;
 }
@@ -403,18 +403,14 @@ button, input, select { font: inherit; }
 .filters {
   display: flex;
   gap: 10px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: flex-end;
+  overflow-x: auto;
+  white-space: nowrap;
 }
+
 .filter-chip {
-  padding: 11px 16px;
-  border: 1px solid var(--line);
-  background: var(--off-white);
-  cursor: pointer;
-  font-size: .75rem;
-  text-transform: uppercase;
-  letter-spacing: .12em;
-  color: var(--text-mid);
+  flex: 0 0 auto;
 }
 .filter-chip.is-active,
 .filter-chip:hover { background: var(--gold-pale); border-color: var(--gold-light); color: var(--gold-dark); }

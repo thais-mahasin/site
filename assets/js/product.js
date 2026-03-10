@@ -4,6 +4,7 @@
   const product = getProductBySlug(slug) || PRODUCTS[0];
   const content = document.getElementById('productContent');
   const related = document.getElementById('relatedProducts');
+  const relatedSection = document.querySelector('.related');
   const pageTitle = document.querySelector('title');
   pageTitle.textContent = `${product.name} | Thais Mahasin`;
 
@@ -26,7 +27,7 @@
     viewer.innerHTML = '';
     if (item.type === 'video') {
       viewer.innerHTML = `
-        <video controls playsinline poster="${item.poster || ''}">
+        <video controls muted playsinline poster="${item.poster || ''}">
           <source src="${item.src}" type="video/mp4" />
           Seu navegador não suporta vídeo.
         </video>
@@ -110,22 +111,31 @@
   }
 
   function renderRelated() {
-    const others = PRODUCTS.filter(item => item.slug !== product.slug).slice(0, 3);
-    related.innerHTML = others.map(item => `
-      <article class="related-card">
-        <a href="product.html?slug=${item.slug}">
-          <img src="${item.gallery[0].src}" alt="${item.name}" loading="lazy" />
-        </a>
-        <div class="related-card-body">
-          <div class="product-line">${item.categoryLabel}</div>
-          <a href="product.html?slug=${item.slug}"><h4>${item.name}</h4></a>
-          <div class="price">${formatPriceBRL(item.price)}</div>
-          <a class="btn btn-outline" href="product.html?slug=${item.slug}">Ver peça</a>
-        </div>
-      </article>
-    `).join('');
-  }
+	  const sameCategory = PRODUCTS
+		.filter(item => item.slug !== product.slug && item.category === product.category)
+		.slice(0, 3);
 
+	  if (!sameCategory.length) {
+		if (relatedSection) relatedSection.style.display = 'none';
+		return;
+	  }
+
+	  if (relatedSection) relatedSection.style.display = '';
+
+	  related.innerHTML = sameCategory.map(item => `
+		<article class="related-card">
+		  <a href="product.html?slug=${item.slug}">
+			<img src="${item.gallery[0].src}" alt="${item.name}" loading="lazy" />
+		  </a>
+		  <div class="related-card-body">
+			<div class="product-line">${item.categoryLabel}</div>
+			<a href="product.html?slug=${item.slug}"><h4>${item.name}</h4></a>
+			<div class="price">${formatPriceBRL(item.price)}</div>
+			<a class="btn btn-outline" href="product.html?slug=${item.slug}">Ver peça</a>
+		  </div>
+		</article>
+	  `).join('');
+	}
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightboxImg');
   function openLightbox() {
