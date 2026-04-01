@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contrato | Thais Mahasin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #faf8f4;
+      --card: #ffffff;
+      --text: #231d17;
+      --muted: #7a6d5f;
+      --gold: #c9a84c;
+      --gold-2: #e4cc86;
+      --line: rgba(201,168,76,.22);
+      --soft: #f6f1e7;
+      --shadow: 0 10px 40px rgba(35,29,23,.08);
+      --ok: #128c7e;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, #f9f7f2 0%, #fff 30%, #f9f7f2 100%);
+      line-height: 1.7;
+    }
+    .container { width: min(94%, 1380px); margin: 0 auto; }
+    .hero {
+      padding: 36px 0 22px;
+      border-bottom: 1px solid var(--line);
+      background: radial-gradient(circle at top right, rgba(201,168,76,.08), transparent 30%), var(--bg);
+    }
+    .hero-grid { display: grid; grid-template-columns: 360px 1fr; gap: 28px; align-items: center; }
+    .brand, .panel, .preview { background: rgba(255,255,255,.94); border: 1px solid var(--line); box-shadow: var(--shadow); }
+    .brand { padding: 24px; }
+    .brand-top { display: flex; gap: 18px; align-items: center; }
+    .brand-logo { width: 120px; border: 1px solid var(--line); padding: 8px; background: #fff; }
+    .brand h1, .title, .contract-title, .clause-title { font-family: 'Cormorant Garamond', serif; font-weight: 500; }
+    .brand h1 { margin: 0 0 4px; font-size: 2rem; }
+    .eyebrow {
+      font-size: .72rem; text-transform: uppercase; letter-spacing: .22em; color: var(--gold); font-weight: 700; margin-bottom: 10px;
+    }
+    .hero-copy .title { font-size: clamp(2.1rem, 4vw, 3.2rem); margin: 0 0 8px; line-height: 1.05; }
+    .hero-copy p { margin: 0; color: var(--muted); max-width: 720px; }
+    .meta { margin-top: 18px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .meta div { padding: 12px; background: var(--soft); border: 1px solid var(--line); font-size: .82rem; }
+    .workspace { padding: 28px 0 54px; }
+    .grid { display: grid; grid-template-columns: 420px 1fr; gap: 26px; align-items: start; }
+    .panel { padding: 22px; position: sticky; top: 20px; max-height: calc(100vh - 40px); overflow: auto; }
+    .panel-title { margin: 0 0 6px; font-size: 1.9rem; }
+    .panel-sub { margin: 0 0 18px; color: var(--muted); font-size: .85rem; }
+    .section { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--line); }
+    .section:first-of-type { margin-top: 0; padding-top: 0; border-top: 0; }
+    .section-name { font-size: .68rem; text-transform: uppercase; letter-spacing: .2em; color: var(--gold); font-weight: 700; margin-bottom: 12px; }
+    label { display: block; font-size: .68rem; text-transform: uppercase; letter-spacing: .16em; font-weight: 700; color: #5f5141; margin: 12px 0 6px; }
+    input, textarea, select {
+      width: 100%; border: 1px solid var(--line); background: #fff; padding: 13px 14px; font: inherit; color: var(--text);
+    }
+    textarea { min-height: 90px; resize: vertical; }
+    input:focus, textarea:focus, select:focus { outline: 2px solid rgba(201,168,76,.14); border-color: var(--gold); }
+    .two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+    button {
+      border: 0; cursor: pointer; padding: 13px 18px; font: inherit; font-size: .76rem; text-transform: uppercase; letter-spacing: .14em; font-weight: 700;
+    }
+    .btn-gold { background: linear-gradient(135deg, var(--gold), var(--gold-2)); color: #fff; }
+    .btn-outline { background: transparent; border: 1px solid var(--line); color: var(--text); }
+    .btn-wa { background: var(--ok); color: #fff; }
+    .hint { margin-top: 14px; padding: 14px; background: var(--soft); border: 1px solid var(--line); color: var(--muted); font-size: .8rem; }
+
+    .preview { padding: 24px; }
+    .sheet { max-width: 860px; margin: 0 auto; background: #fff; border: 1px solid rgba(35,29,23,.08); position: relative; }
+    .sheet::before { content: ''; position: absolute; inset: 14px; border: 1px solid var(--line); pointer-events: none; }
+    .sheet-inner { position: relative; z-index: 1; padding: 42px 46px 48px; }
+    .contract-head { display: grid; grid-template-columns: 150px 1fr; gap: 22px; align-items: center; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+    .contract-logo { width: 150px; background: #fff; border: 1px solid var(--line); padding: 8px; }
+    .contract-title { margin: 0 0 8px; font-size: 2.45rem; line-height: 1.02; }
+    .contract-sub { color: var(--muted); font-size: .85rem; }
+    .ribbon { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 18px 0 24px; }
+    .ribbon div { border: 1px solid var(--line); background: var(--soft); padding: 12px; font-size: .82rem; }
+    .mini { font-size: .63rem; text-transform: uppercase; letter-spacing: .18em; color: var(--gold); font-weight: 700; margin-bottom: 5px; }
+    .contract-body p, .contract-body li { font-size: .92rem; text-align: justify; }
+    .clause-title { font-size: 1.28rem; margin: 18px 0 8px; padding-left: 16px; position: relative; }
+    .clause-title::before { content: ''; position: absolute; left: 0; top: .55em; width: 8px; height: 8px; background: var(--gold); transform: rotate(45deg); }
+    .highlight { padding: 14px 16px; background: linear-gradient(90deg, var(--soft), #fff); border-left: 2px solid var(--gold); margin: 14px 0; }
+    .signature { margin-top: 28px; border-top: 1px solid var(--line); padding-top: 22px; }
+    .accept-box { padding: 14px; background: var(--soft); border: 1px solid var(--line); display: flex; gap: 12px; align-items: flex-start; font-size: .84rem; }
+    .accept-box input { width: 18px; height: 18px; accent-color: var(--gold); margin-top: 3px; }
+    .sign-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 22px; }
+    .sign { padding-top: 44px; text-align: center; }
+    .line { border-top: 1px solid #000; margin-bottom: 8px; }
+    .foot { text-align: center; color: var(--muted); font-size: .74rem; margin-top: 20px; }
+
+    @media (max-width: 1100px) {
+      .hero-grid, .grid { grid-template-columns: 1fr; }
+      .panel { position: static; max-height: none; }
+    }
+    @media (max-width: 760px) {
+      .two, .ribbon, .meta, .contract-head, .sign-grid { grid-template-columns: 1fr; }
+      .sheet-inner { padding: 24px; }
+    }
+    @media print {
+      @page { size: A4; margin: 10mm; }
+      .hero, .panel { display: none !important; }
+      .workspace { padding: 0; }
+      .preview { padding: 0; border: 0; box-shadow: none; }
+      .sheet { max-width: none; border: 0; box-shadow: none; }
+      .sheet-inner { padding: 16mm 12mm; }
+      .sheet::before { inset: 8px; }
+    }
+  </style>
+</head>
+<body>
+  <section class="workspace">
+    <div class="container">
+      <div class="grid">
+        <aside class="panel">
+          <h3 class="panel-title">Editor</h3>
+          <p class="panel-sub">Preencha os dados, atualize o contrato e use o botão do WhatsApp. O contato da loja já está preenchido com o número oficial.</p>
+          <div class="section">
+            <div class="section-name">Contrato</div>
+            <div class="two">
+              <div>
+                <label for="contractDate">Data do contrato</label>
+                <input id="contractDate" type="date" />
+              </div>
+              <div>
+                <label for="approvalDate">Data da aprovação final</label>
+                <input id="approvalDate" type="date" />
+              </div>
+            </div>
+            <div class="two">
+              <div>
+                <label for="storeWhatsApp">WhatsApp da loja</label>
+                <input id="storeWhatsApp" value="5521996313804" />
+              </div>
+              <div>
+                <label for="storeEmail">E-mail comercial</label>
+                <input id="storeEmail" value="contato@thaismahasin.com.br" />
+              </div>
+            </div>
+          </div>
+
+          <div class="section">
+            <div class="section-name">Cliente</div>
+            <label for="clientName">Nome completo</label>
+            <input id="clientName" value="Nome da Cliente" />
+            <div class="two">
+              <div>
+                <label for="clientDoc">CPF</label>
+                <input id="clientDoc" value="000.000.000-00" />
+              </div>
+              <div>
+                <label for="clientPhone">WhatsApp da cliente</label>
+                <input id="clientPhone" value="55219988887777" />
+              </div>
+            </div>
+            <label for="clientAddress">Endereço</label>
+            <textarea id="clientAddress">Rua, número, bairro, cidade/UF, CEP.</textarea>
+            <div class="two">
+              <div>
+                <label for="clientCity">Cidade de entrega</label>
+                <select id="clientCity">
+                  <option>Niterói</option>
+                  <option>São Gonçalo</option>
+                  <option>Rio de Janeiro</option>
+                  <option>Maricá</option>
+                  <option>Itaboraí</option>
+                  <option>Outra cidade</option>
+                </select>
+              </div>
+              <div>
+                <label for="clientState">UF</label>
+                <input id="clientState" value="RJ" />
+              </div>
+            </div>
+            <label for="digitalEmail">E-mail</label>
+            <input id="digitalEmail" value="cliente@email.com" />
+          </div>
+
+          <div class="section">
+            <div class="section-name">Peça</div>
+            <label for="productDescription">Descrição da peça</label>
+            <textarea id="productDescription">Peça personalizada confeccionada sob medida, conforme briefing aprovado.</textarea>
+            <label for="measurements">Medidas e especificações</label>
+            <textarea id="measurements">Tecido, cor, comprimento, acabamento, medidas corporais e demais detalhes aprovados.</textarea>
+            <label for="references">Referências e anexos</label>
+            <textarea id="references">Fotos, croquis, links, conversas aprovadas e demais materiais do briefing.</textarea>
+          </div>
+
+          <div class="section">
+            <div class="section-name">Condições comerciais</div>
+            <div class="two">
+              <div>
+                <label for="totalPrice">Valor total (R$)</label>
+                <input id="totalPrice" value="1000,00" />
+              </div>
+              <div>
+                <label for="signalValue">Sinal / arras (R$)</label>
+                <input id="signalValue" value="500,00" />
+              </div>
+            </div>
+            <div class="two">
+              <div>
+                <label for="remainingPayment">Saldo final (R$)</label>
+                <input id="remainingPayment" value="500,00" />
+              </div>
+              <div>
+                <label for="productionDays">Prazo base de produção</label>
+                <input id="productionDays" value="15 dias úteis" />
+              </div>
+            </div>
+            <div class="two">
+              <div>
+                <label for="maxChanges">Máximo de alterações</label>
+                <input id="maxChanges" value="2" />
+              </div>
+              <div>
+                <label for="warrantyDays">Garantia (dias)</label>
+                <input id="warrantyDays" value="90" />
+              </div>
+            </div>
+            <label for="paymentMethod">Forma de pagamento</label>
+            <input id="paymentMethod" value="Pix, transferência, cartão ou outra forma ajustada entre as partes" />
+            <label for="pickupAddress">Endereço de retirada</label>
+            <textarea id="pickupAddress">Sala 1001 - Av. Ernani do Amaral Peixoto, 36 - Centro, Niterói - RJ, 24020-074.</textarea>
+            <label for="extraDelivery">Observações sobre entrega</label>
+            <textarea id="extraDelivery">Frete, se aplicável, será informado previamente e pago conforme combinado entre as partes.</textarea>
+          </div>
+
+          <div class="actions">
+            <button class="btn-gold" onclick="updateContract()">Atualizar contrato</button>
+            <button class="btn-outline" onclick="window.print()">Gerar PDF</button>
+            <button class="btn-wa" onclick="sendWhatsAppAcceptance()">Aceitar contrato</button>
+          </div>
+
+          <div class="hint">
+            O botão <strong>Aceitar contrato</strong> abre o WhatsApp oficial da marca com uma mensagem pronta para a cliente confirmar eletronicamente a encomenda. Esse aceite é útil como prova complementar junto com o PDF enviado à cliente.
+          </div>
+        </aside>
+
+        <main class="preview">
+          <div class="sheet">
+            <div class="sheet-inner" id="contract"></div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const COMPANY = {
+      fantasyName: 'Thais Mahasin',
+      legalName: 'Thais da Mata Pereira',
+      cnpj: '43.819.211/0001-63',
+      city: 'Niterói/RJ',
+      pickupAddress: 'Sala 1001 - Av. Ernani do Amaral Peixoto, 36 - Centro, Niterói - RJ, 24020-074.',
+      whatsapp: '(21) 99631-3804',
+      whatsappDigits: '5521996313804',
+      email: 'contato@thaismahasin.com.br',
+      instagram: '@thais_mahasin',
+      hours: 'Seg a Sex, 9h – 18h'
+    };
+
+    function g(id) { return document.getElementById(id).value.trim(); }
+    function fmtDate(v) {
+      if (!v) return '__/__/____';
+      const [y,m,d] = v.split('-');
+      return `${d}/${m}/${y}`;
+    }
+    function normalizePhone(v) { return (v || '').replace(/\D/g, ''); }
+
+    function freightRule(city, uf) {
+      const c = (city || '').toLowerCase();
+      uf = (uf || '').toUpperCase();
+      if (c === 'niterói') return {
+        eta: '1 a 2 dias úteis após conclusão',
+        clause: 'Para entregas em Niterói/RJ, a CONTRATADA poderá disponibilizar retirada agendada no endereço da loja ou entrega local, conforme disponibilidade logística. Após a conclusão da peça, o prazo estimado para retirada ou entrega local é de 1 a 2 dias úteis.'
+      };
+      if (c === 'são gonçalo') return {
+        eta: '1 a 3 dias úteis após conclusão',
+        clause: 'Para entregas em São Gonçalo/RJ, a entrega poderá ocorrer por motoboy, operador logístico local ou retirada agendada na loja, com frete previamente informado. Após a conclusão da peça, o prazo estimado é de 1 a 3 dias úteis.'
+      };
+      if (c === 'rio de janeiro') return {
+        eta: '2 a 4 dias úteis após conclusão',
+        clause: 'Para entregas na cidade do Rio de Janeiro/RJ, a entrega poderá ocorrer por operador logístico, aplicativo ou retirada agendada na loja. O frete será previamente informado e o prazo estimado, após a conclusão da peça, é de 2 a 4 dias úteis.'
+      };
+      if (c === 'maricá' || c === 'itaboraí') return {
+        eta: '2 a 5 dias úteis após conclusão',
+        clause: `Para entregas em ${city}/${uf}, a entrega poderá ocorrer por envio regional ou retirada na loja, conforme ajuste entre as partes. O frete será previamente informado e o prazo estimado, após a conclusão da peça, é de 2 a 5 dias úteis.`
+      };
+      return {
+        eta: '2 a 7 dias úteis após conclusão',
+        clause: `Para entregas em ${city}/${uf}, o envio poderá ocorrer por Correios, transportadora ou outro operador logístico compatível. O frete será previamente informado e o prazo de transporte passará a contar após a conclusão da peça e a quitação do saldo.`
+      };
+    }
+
+    function dataObj() {
+      return {
+        contractDate: fmtDate(g('contractDate')),
+        approvalDate: fmtDate(g('approvalDate')),
+        clientName: g('clientName'),
+        clientDoc: g('clientDoc'),
+        clientPhone: g('clientPhone'),
+        clientAddress: g('clientAddress'),
+        clientCity: g('clientCity'),
+        clientState: g('clientState'),
+        digitalEmail: g('digitalEmail'),
+        productDescription: g('productDescription'),
+        measurements: g('measurements'),
+        references: g('references'),
+        totalPrice: g('totalPrice'),
+        signalValue: g('signalValue'),
+        remainingPayment: g('remainingPayment'),
+        productionDays: g('productionDays'),
+        maxChanges: g('maxChanges'),
+        warrantyDays: g('warrantyDays'),
+        paymentMethod: g('paymentMethod'),
+        pickupAddress: g('pickupAddress'),
+        extraDelivery: g('extraDelivery')
+      };
+    }
+
+    function updateContract() {
+      const d = dataObj();
+      const freight = freightRule(d.clientCity, d.clientState);
+      document.getElementById('contract').innerHTML = `
+        <div class="contract-head">
+          <img class="contract-logo" src="assets/img/logo/logo.png" alt="Logo Thais Mahasin" />
+          <div>
+            <div class="eyebrow">Contrato de peça sob medida</div>
+            <h1 class="contract-title">Contrato de Encomenda Sob Medida</h1>
+            <div class="contract-sub">Instrumento particular com aceite eletrônico, estrutura adequada para envio em PDF e confirmação por WhatsApp. Contato oficial: ${COMPANY.whatsapp} · ${COMPANY.email} · ${COMPANY.instagram}.</div>
+          </div>
+        </div>
+
+        <div class="ribbon">
+          <div><div class="mini">Data</div>${d.contractDate}</div>
+          <div><div class="mini">Aprovação final</div>${d.approvalDate}</div>
+          <div><div class="mini">Entrega estimada</div>${freight.eta}</div>
+        </div>
+
+        <div class="contract-body">
+          <p><strong>CONTRATADA:</strong> ${COMPANY.fantasyName}, nome empresarial <strong>${COMPANY.legalName}</strong>, inscrita no CNPJ sob nº <strong>${COMPANY.cnpj}</strong>, com atendimento em ${COMPANY.city}, contato oficial via WhatsApp ${COMPANY.whatsapp}, e-mail ${COMPANY.email} e Instagram ${COMPANY.instagram}.</p>
+          <p><strong>CONTRATANTE:</strong> ${d.clientName}, inscrita no CPF sob nº ${d.clientDoc}, contato ${d.clientPhone}, endereço ${d.clientAddress}.</p>
+
+          <div class="highlight">O presente instrumento é firmado com base na boa-fé, na transparência da relação de consumo e na natureza personalizada da peça encomendada, observando o Código de Defesa do Consumidor, o Código Civil e a legislação aplicável.</div>
+
+          <h3 class="clause-title">1. Objeto</h3>
+          <p>O presente contrato tem por objeto a criação, confecção e fornecimento da seguinte peça personalizada sob medida: <strong>${d.productDescription}</strong>.</p>
+          <p><strong>Especificações aprovadas:</strong> ${d.measurements}</p>
+          <p><strong>Referências do briefing:</strong> ${d.references}</p>
+
+          <h3 class="clause-title">2. Natureza personalizada do produto</h3>
+          <p>A peça será produzida sob medida, conforme características individualizadas aprovadas pela CONTRATANTE, possuindo reduzida possibilidade de revenda sem perda econômica para a CONTRATADA.</p>
+
+          <h3 class="clause-title">3. Preço, pagamento e arras</h3>
+          <p>O valor total ajustado é de <strong>R$ ${d.totalPrice}</strong>, sendo <strong>R$ ${d.signalValue}</strong> pagos a título de sinal/arras confirmatórias para reserva de agenda, modelagem, compra de insumos e início da produção, e <strong>R$ ${d.remainingPayment}</strong> a título de saldo final.</p>
+          <p>A forma de pagamento ajustada é: ${d.paymentMethod}.</p>
+          <p>O sinal possui natureza de arras confirmatórias, observando-se os arts. 417 a 420 do Código Civil, sem prejuízo da interpretação conforme a legislação consumerista e da proporcionalidade em caso de desistência ou inadimplemento.</p>
+
+          <h3 class="clause-title">4. Aprovação e alterações</h3>
+          <p>As especificações finais foram aprovadas em <strong>${d.approvalDate}</strong>. A CONTRATANTE poderá solicitar até <strong>${d.maxChanges}</strong> alteração(ões) antes do início efetivo da produção, desde que tecnicamente viáveis e compatíveis com a fase do pedido. Alterações posteriores poderão implicar custo adicional e revisão de prazo.</p>
+
+          <h3 class="clause-title">4-A. Material fornecido pela Contratante</h3>
+          <p>Caso a CONTRATANTE opte por fornecer o material (tecido, aviamentos ou insumos) para execução da peça, deverá entregá-lo em quantidade suficiente, em boas condições de uso e com qualidade compatível com o padrão da encomenda descrito na Cláusula 1.</p>
+          <p>A CONTRATADA não se responsabilizará por resultado final insatisfatório, defeitos de acabamento, encolhimento, descostura ou qualquer inadequação decorrente de material fornecido pela CONTRATANTE em quantidade insuficiente, qualidade inferior, fora das especificações acordadas ou em estado impróprio para costura.</p>
+          <p>Antes do início da produção, a CONTRATADA avaliará o material recebido e comunicará à CONTRATANTE, por escrito (WhatsApp ou e-mail), qualquer ressalva quanto à qualidade ou quantidade. Caso a CONTRATANTE opte por prosseguir mesmo após a ressalva registrada, assumirá integralmente o risco pelo resultado.</p>
+          <p>O valor do serviço de confecção permanece inalterado independentemente da qualidade do material fornecido, salvo negociação prévia expressa entre as partes.</p>
+
+          <h3 class="clause-title">5. Prazo de produção e atraso</h3>
+          <p>O prazo-base estimado de produção é de <strong>${d.productionDays}</strong>, contado da confirmação do sinal e da aprovação final das especificações.</p>
+          <p>Em caso de atraso imputável à CONTRATADA além de tolerância razoável e sem justificativa adequada, a CONTRATANTE poderá, nos termos da legislação aplicável, exigir o cumprimento forçado da obrigação, aceitar solução equivalente ou rescindir o contrato com restituição dos valores pagos, sem prejuízo de apuração de perdas e danos quando cabíveis.</p>
+
+          <h3 class="clause-title">6. Frete, retirada e prazo por cidade</h3>
+          <p>${freight.clause}</p>
+          <p><strong>Endereço de retirada:</strong> ${d.pickupAddress}</p>
+          <p>${d.extraDelivery}</p>
+
+          <h3 class="clause-title">7. Responsabilidade pelas informações fornecidas</h3>
+          <p>As medidas, preferências e instruções fornecidas pela CONTRATANTE integram a base técnica do pedido. A CONTRATADA não responderá por inadequações decorrentes de erro, omissão ou alteração posterior de informações atribuíveis à CONTRATANTE.</p>
+
+          <h3 class="clause-title">8. Cancelamento e desistência</h3>
+          <p>Antes do início efetivo da produção, a desistência poderá ocorrer com restituição dos valores pagos, facultada retenção proporcional e não abusiva de custos efetivamente comprováveis, inclusive atendimento técnico, desenho, modelagem e insumos já adquiridos.</p>
+          <p>Após o início efetivo da produção, eventual desistência ou arrependimento não excluirá o dever de ressarcir os custos efetivamente incorridos e comprováveis, inclusive materiais personalizados, etapas executadas e demais despesas diretamente vinculadas ao pedido, vedada retenção genérica ou desproporcional.</p>
+
+          <h3 class="clause-title">9. Direito de arrependimento em contratação à distância</h3>
+          <p>Nas contratações realizadas fora do estabelecimento comercial, inclusive por meio eletrônico, aplica-se o art. 49 do Código de Defesa do Consumidor. Exercido o arrependimento dentro de 7 dias e antes do início efetivo da produção, a restituição observará a devolução dos valores pagos. Se o arrependimento for comunicado após o início efetivo da produção, subsistirá o dever de reembolso dos custos reais, necessários e comprováveis já incorridos, em respeito à boa-fé e à vedação ao enriquecimento sem causa.</p>
+
+          <h3 class="clause-title">10. Garantia e vícios</h3>
+          <p>A CONTRATADA assegura a garantia legal aplicável e adota como referência operacional o prazo de <strong>${d.warrantyDays} dias</strong> para atendimento de vícios de fabricação compatíveis com a natureza do produto. Não estão cobertos desgaste natural, mau uso, lavagem inadequada, armazenamento impróprio ou intervenção de terceiros.</p>
+
+          <h3 class="clause-title">11. Comunicações e prova eletrônica</h3>
+          <p>Mensagens trocadas por WhatsApp, e-mail, Instagram, formulário eletrônico ou outro meio idôneo poderão ser utilizadas para comprovar proposta, briefing, orçamento, aprovação, prazo, alterações, envio do contrato e aceite.</p>
+
+          <h3 class="clause-title">12. Aceite eletrônico e entrega de via</h3>
+          <p>O aceite deste contrato poderá ocorrer por checkbox, mensagem escrita, resposta expressa em WhatsApp, e-mail ou outro meio eletrônico que permita identificar a manifestação de vontade da CONTRATANTE vinculada a esta encomenda sob medida.</p>
+          <p>Uma via eletrônica deste contrato deverá ser disponibilizada à CONTRATANTE em formato digital hábil, inclusive PDF, por e-mail, WhatsApp ou outro meio equivalente com possibilidade de arquivamento.</p>
+
+          <h3 class="clause-title">13. Proteção de dados</h3>
+          <p>Os dados pessoais coletados serão tratados para execução deste contrato, atendimento, entrega, faturamento e pós-venda, com fundamento no art. 7º, V, da LGPD. A CONTRATANTE poderá solicitar acesso, correção ou atualização de seus dados, observadas as hipóteses legais de conservação, e tais dados não serão compartilhados com terceiros além do necessário para execução do contrato, cumprimento legal ou exercício regular de direitos.</p>
+
+          <h3 class="clause-title">14. Foro</h3>
+          <p>Fica eleito o foro da comarca de Niterói/RJ, sem prejuízo do foro competente assegurado ao consumidor pela legislação aplicável.</p>
+
+          <div class="signature">
+            <div class="accept-box">
+              <input type="checkbox" checked />
+              <div><strong>Aceite eletrônico da cliente:</strong> declaro que li, compreendi e concordo com as cláusulas deste contrato, com as especificações aprovadas, com as condições de pagamento e com a cláusula de entrega aplicável à cidade de destino.</div>
+            </div>
+            <div class="sign-grid">
+              <div class="sign">
+                <div class="line"></div>
+                <strong>${COMPANY.fantasyName}</strong><br />
+                <span style="color: var(--muted); font-size: .78rem;">CONTRATADA · CNPJ ${COMPANY.cnpj}</span>
+              </div>
+              <div class="sign">
+                <div class="line"></div>
+                <strong>${d.clientName}</strong><br />
+                <span style="color: var(--muted); font-size: .78rem;">CONTRATANTE · ${d.digitalEmail}</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="foot">Documento gerado em ${d.contractDate}. Recomenda-se arquivar o PDF enviado e a mensagem de aceite recebida no WhatsApp oficial ${COMPANY.whatsapp}.</div>
+        </div>
+      `;
+    }
+
+    function sendWhatsAppAcceptance() {
+      updateContract();
+      const d = dataObj();
+      const storePhone = normalizePhone(g('storeWhatsApp'));
+      if (!storePhone) {
+        alert('Preencha o WhatsApp da loja no formato com DDI e DDD. Ex.: 5521999999999');
+        return;
+      }
+      const message = [
+        'Olá, Thais Mahasin.',
+        '',
+        `Eu, ${d.clientName}, confirmo o ACEITE ELETRÔNICO deste contrato de encomenda sob medida.`,
+        `CPF: ${d.clientDoc}`,
+        `Data do contrato: ${d.contractDate}`,
+        `Data de aprovação final: ${d.approvalDate}`,
+        '',
+        'Declaro que li e concordo com as cláusulas do contrato, com as especificações da peça sob medida, com as condições de pagamento, com a política de alterações, com o prazo de produção e com a cláusula de frete/entrega aplicável à minha encomenda.',
+        '',
+        'Também confirmo o recebimento de uma via digital do contrato.',
+        '',
+        'Nome completo:',
+        d.clientName,
+        'E-mail:',
+        d.digitalEmail
+      ].join('\n');
+      const url = `https://wa.me/${storePhone}?text=${encodeURIComponent(message)}`;
+      window.open(url, '_blank');
+    }
+
+    function fillExample() {
+      const today = new Date().toISOString().slice(0,10);
+      document.getElementById('contractDate').value = today;
+      document.getElementById('approvalDate').value = today;
+      document.getElementById('clientName').value = 'Marina Oliveira';
+      document.getElementById('clientDoc').value = '123.456.789-00';
+      document.getElementById('clientPhone').value = '55219988887777';
+      document.getElementById('clientAddress').value = 'Rua Exemplo, 145, Icaraí, Niterói/RJ, CEP 24220-000.';
+      document.getElementById('clientCity').value = 'Niterói';
+      document.getElementById('clientState').value = 'RJ';
+      document.getElementById('digitalEmail').value = 'marina@email.com';
+      document.getElementById('pickupAddress').value = 'Sala 1001 - Av. Ernani do Amaral Peixoto, 36 - Centro, Niterói - RJ, 24020-074.';
+      updateContract();
+    }
+
+    (function init() {
+      const today = new Date().toISOString().slice(0,10);
+      document.getElementById('contractDate').value = today;
+      document.getElementById('approvalDate').value = today;
+      updateContract();
+    })();
+  </script>
+</body>
+</html>
