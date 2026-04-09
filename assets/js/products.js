@@ -271,7 +271,37 @@ window.PRODUCTS = [
       { type: 'image', src: 'assets/media/products/conjunto-linho/atelier.png', alt: 'Conjunto Linho no manequim' },
       { type: 'video', src: 'assets/media/products/conjunto-linho/desfile.mp4', poster: 'assets/media/products/conjunto-linho/editorial.png', alt: 'Vídeo do Conjunto Linho' }
     ]
-  }
+  },
+  {
+  id: 'p8',
+  slug: 'vestido-rose-halter',
+  name: 'Vestido Rosé Halter',
+  line: 'Linha Rosé Halter',
+  category: 'festa',
+  categoryLabel: 'Vestido de festa',
+  price: 950,
+  availability: 'Disponível',
+  shortDescription: 'Vestido curto em tom rosé com decote halter, caimento fluido e brilho acetinado.',
+  description: 'Modelo autoral de estética delicada e refinada. A leveza da silhueta aliada ao acabamento acetinado cria uma peça elegante, versátil e contemporânea.',
+  colors: [
+    { name: 'Rosé', hex: '#d8c0c3' }
+  ],
+  sizes: ['Sob consulta'],
+  materials: ['Cetim acetinado', 'Acabamento premium'],
+  highlights: [
+    'Decote halter',
+    'Caimento leve e fluido',
+    'Modelagem evasê',
+    'Ideal para festas e eventos elegantes'
+  ],
+  story: 'O Rosé Halter foi pensado para transmitir suavidade e sofisticação em uma leitura minimalista. Sua construção limpa valoriza o caimento do tecido e a delicadeza do decote, resultando em uma peça atemporal e feminina.',
+  gallery: [
+    { type: 'image', src: 'assets/media/products/vestido-rose-halter/editorial.png', alt: 'Vestido Rosé Halter em foto editorial' },
+    { type: 'image', src: 'assets/media/products/vestido-rose-halter/atelier.png', alt: 'Vestido Rosé Halter no manequim' },
+    { type: 'video', src: 'assets/media/products/vestido-rose-halter/desfile.mp4', poster: 'assets/media/products/vestido-rose-halter/editorial.png', alt: 'Vídeo do Vestido Rosé Halter' }
+  ]
+  },
+ 
 ];
 
 window.getProductBySlug = function(slug) {
