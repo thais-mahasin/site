@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Consertos | Thais Mahasin</title>
+  <meta name="description" content="Serviços de conserto, ajuste e restauração de peças da Thais Mahasin. Devolvemos a vida e o caimento às suas roupas favoritas." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/shop.css" />
+
+  <style>
+    :root {
+      --gold: #C9A84C;
+      --gold-light: #E8D08A;
+      --gold-dark: #A8872E;
+      --gold-pale: #F5EDD4;
+      --text: #1A1612;
+      --text-muted: #5A5045;
+      --cream: #F5F2EC;
+      --white: #ffffff;
+      --line: rgba(201,168,76,0.2);
+      --line-strong: rgba(201,168,76,0.15);
+      --shadow-gold: 0 8px 40px rgba(201,168,76,0.18);
+    }
+
+    /* ── TOPBAR / NAV ── */
+    .topbar {
+      position: sticky;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      transition: all 0.4s ease;
+    }
+
+    .topbar.scrolled {
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 2px 40px rgba(26,22,18,0.07);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      height: 80px;
+      gap: 24px;
+    }
+
+    .nav-logo img,
+    .header-logo {
+      height: 75px;
+      width: auto;
+      max-width: 240px;
+      object-fit: contain;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+      min-width: 0;
+    }
+
+    .nav-links a {
+      white-space: nowrap;
+      line-height: 1;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .nav-links a:hover { color: var(--gold-dark); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+
+    .hamburger span {
+      width: 24px;
+      height: 1.5px;
+      background: var(--text);
+      transition: all 0.3s;
+      display: block;
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(255,255,255,0.98);
+      backdrop-filter: blur(20px);
+      z-index: 998;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+    }
+
+    .mobile-menu.open { display: flex; }
+
+    .mobile-menu a {
+      font-size: 1.5rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      color: var(--text);
+      letter-spacing: 0.05em;
+    }
+
+    .mobile-menu-close {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      background: none;
+      border: none;
+      font-size: 1.6rem;
+      cursor: pointer;
+      color: #5A5045;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links,
+      .nav-cta { display: none; }
+      .hamburger { display: flex; }
+    }
+
+    /* ── PAGE HERO ── */
+    .page-hero {
+      background: var(--cream);
+      padding: 80px 0 64px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold-light), transparent);
+    }
+
+    .page-hero .eyebrow {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .page-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      font-weight: 300;
+      line-height: 1.15;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+
+    .page-hero p {
+      max-width: 540px;
+      margin: 0 auto;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+
+    /* ── INTRO STRIP ── */
+    .intro-strip {
+      background: var(--white);
+      padding: 64px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .intro-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .intro-text h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.9rem;
+      font-weight: 400;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+
+    .intro-text p {
+      font-size: 0.87rem;
+      color: var(--text-muted);
+      line-height: 1.9;
+      margin-bottom: 28px;
+    }
+
+    .intro-highlights {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .highlight-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .highlight-icon {
+      width: 36px;
+      height: 36px;
+      flex-shrink: 0;
+      background: var(--gold-pale);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+
+    .highlight-item p {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .highlight-item strong {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 2px;
+      letter-spacing: 0.03em;
+    }
+
+    @media (max-width: 768px) {
+      .intro-inner { grid-template-columns: 1fr; gap: 36px; }
+    }
+
+    /* ── SERVICES GRID ── */
+    .consertos-section {
+      background: var(--cream);
+      padding: 80px 0;
+      position: relative;
+    }
+
+    .consertos-section::before,
+    .consertos-section::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold-light), transparent);
+    }
+
+    .consertos-section::before { top: 0; }
+    .consertos-section::after  { bottom: 0; }
+
+    .section-head {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .section-head .eyebrow {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+
+    .section-head h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 300;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+
+    .section-head p {
+      font-size: 0.87rem;
+      color: var(--text-muted);
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    .consertos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--line-strong);
+    }
+
+    .conserto-card {
+      background: var(--white);
+      padding: 44px 32px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
+    }
+
+    .conserto-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 100%; height: 2px;
+      background: linear-gradient(to right, var(--gold-dark), var(--gold-light));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .conserto-card:hover::before { transform: scaleX(1); }
+
+    .conserto-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-gold);
+      z-index: 1;
+    }
+
+    .conserto-icon {
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+
+    .conserto-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 500;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    .conserto-card p {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .price-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--gold-pale);
+      border: 1px solid var(--gold-light);
+      border-radius: 2px;
+      padding: 6px 14px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+    }
+
+    .price-badge span {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    @media (max-width: 900px) {
+      .consertos-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 560px) {
+      .consertos-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── PRICING TABLE ── */
+    .pricing-section {
+      background: var(--white);
+      padding: 80px 0;
+    }
+
+    .pricing-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+    }
+
+    .pricing-table thead th {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      padding: 0 0 18px;
+      text-align: left;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .pricing-table thead th:last-child { text-align: right; }
+
+    .pricing-table tbody tr {
+      border-bottom: 1px solid var(--line);
+      transition: background 0.2s;
+    }
+
+    .pricing-table tbody tr:hover { background: var(--gold-pale); }
+
+    .pricing-table tbody td {
+      padding: 20px 0;
+      font-size: 0.87rem;
+      color: var(--text-muted);
+      vertical-align: top;
+    }
+
+    .pricing-table tbody td:first-child {
+      font-weight: 500;
+      color: var(--text);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+    }
+
+    .pricing-table tbody td:last-child {
+      text-align: right;
+      white-space: nowrap;
+      font-size: 0.83rem;
+      color: var(--gold-dark);
+      font-weight: 600;
+    }
+
+    .table-note {
+      font-size: 0.77rem;
+      color: var(--text-muted);
+      margin-top: 24px;
+      padding: 16px 20px;
+      background: var(--gold-pale);
+      border-left: 2px solid var(--gold);
+      line-height: 1.7;
+    }
+
+    /* ── CTA BANNER ── */
+    .cta-banner {
+      background: var(--text);
+      padding: 72px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(201,168,76,0.08) 0%, transparent 70%);
+    }
+
+    .cta-banner h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 300;
+      color: var(--gold-light);
+      margin-bottom: 14px;
+      position: relative;
+    }
+
+    .cta-banner p {
+      font-size: 0.87rem;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 36px;
+      position: relative;
+    }
+
+    .cta-banner .btn-group {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      position: relative;
+    }
+
+    /* ── FLOATING WA ── */
+    .floating-wa {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 900;
+    }
+
+    .floating-wa a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 52px;
+      height: 52px;
+      background: #25D366;
+      border-radius: 50%;
+      font-size: 1.4rem;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.35);
+      text-decoration: none;
+      transition: transform 0.2s;
+    }
+
+    .floating-wa a:hover { transform: scale(1.08); }
+  </style>
+</head>
+<body>
+
+<!-- ── MOBILE MENU ── -->
+<nav class="mobile-menu" id="mobileMenu" aria-label="Menu mobile">
+  <button class="mobile-menu-close" onclick="closeMobileMenu()">✕</button>
+  <a href="index.html#sobre" onclick="closeMobileMenu()">Sobre</a>
+  <a href="index.html#servicos" onclick="closeMobileMenu()">Serviços</a>
+  <a href="index.html#sob-medida" onclick="closeMobileMenu()">Sob Medida</a>
+  <a href="index.html#depoimentos" onclick="closeMobileMenu()">Depoimentos</a>
+  <a href="index.html#faq" onclick="closeMobileMenu()">FAQ</a>
+  <a href="index.html#contato" onclick="closeMobileMenu()">Contato</a>
+  <a class="btn btn-wa" href="#" data-wa-link target="_blank" rel="noopener">
+    <span>Fale Conosco</span>
+  </a>
+</nav>
+
+<!-- ── HEADER ── -->
+<header class="topbar" id="topbar">
+  <div class="container">
+    <nav class="nav">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/img/logo/logo.png" alt="Thais Mahasin" class="header-logo" />
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html#sobre">Sobre</a></li>
+        <li><a href="index.html#servicos">Serviços</a></li>
+        <li><a href="index.html#sob-medida">Sob Medida</a></li>
+        <li><a href="index.html#depoimentos">Depoimentos</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="index.html#contato">Contato</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a class="btn btn-outline" href="index.html#contato">
+          <span>Orçamento</span>
+        </a>
+        <a class="btn btn-gold" href="#" data-wa-link data-wa-text="Olá! Gostaria de atendimento." target="_blank" rel="noopener">
+          <span>WhatsApp</span>
+        </a>
+      </div>
+
+      <button class="hamburger" onclick="openMobileMenu()" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- ── PAGE HERO ── -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Cuidado com suas peças</span>
+      <h1>Consertos &amp; Ajustes</h1>
+      <p>Damos nova vida às suas roupas favoritas com atenção artesanal, precisão no ajuste e respeito à peça original.</p>
+    </div>
+  </section>
+
+  <!-- ── INTRO ── -->
+  <section class="intro-strip">
+    <div class="container">
+      <div class="intro-inner">
+        <div class="intro-text">
+          <h2>Por que consertar<br/>ao invés de descartar?</h2>
+          <p>Uma peça bem feita merece uma segunda chance. Nosso serviço de consertos resgata o caimento, restaura detalhes e prolonga a vida útil de roupas com valor afetivo ou de alto acabamento. Cada reparo é tratado com o mesmo cuidado de uma criação sob medida.</p>
+          <a class="btn btn-gold" href="#" data-wa-link data-wa-text="Olá! Gostaria de solicitar um conserto." target="_blank" rel="noopener">
+            <span>Solicitar Conserto</span>
+          </a>
+        </div>
+
+        <div class="intro-highlights">
+          <div class="highlight-item">
+            <div class="highlight-icon">🪡</div>
+            <div>
+              <strong>Avaliação presencial</strong>
+              <p>Cada peça é analisada individualmente antes do orçamento, sem custos adicionais surpresa.</p>
+            </div>
+          </div>
+          <div class="highlight-item">
+            <div class="highlight-icon">⏱️</div>
+            <div>
+              <strong>Prazo combinado</strong>
+              <p>Entregamos no prazo acordado. Serviços simples ficam prontos em até 5 dias úteis.</p>
+            </div>
+          </div>
+          <div class="highlight-item">
+            <div class="highlight-icon">✅</div>
+            <div>
+              <strong>Garantia de qualidade</strong>
+              <p>Se o resultado não estiver perfeito, refazemos sem custo adicional.</p>
+            </div>
+          </div>
+          <div class="highlight-item">
+            <div class="highlight-icon">🎀</div>
+            <div>
+              <strong>Peças especiais bem-vindas</strong>
+              <p>Vestidos de noiva, ternos importados, roupas com bordados — tratamos tudo com o mesmo esmero.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SERVICES CARDS ── -->
+  <section class="consertos-section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">O que fazemos</span>
+        <h2>Nossos serviços de conserto</h2>
+        <p>Do ajuste simples à restauração completa, cuidamos da sua peça com técnica e carinho.</p>
+      </div>
+
+      <div class="consertos-grid">
+
+        <div class="conserto-card">
+          <div class="conserto-icon">📏</div>
+          <h3>Ajuste de Comprimento</h3>
+          <p>Bainhas em calças, vestidos, saias e shorts — ajustadas ao seu corpo com acabamento invisível, seja a dobra simples, dupla ou com entretela.</p>
+          <div class="price-badge">A partir de <span>R$ 40</span></div>
+        </div>
+
+        <div class="conserto-card">
+          <div class="conserto-icon">✂️</div>
+          <h3>Ajuste de Cinturas e Laterais</h3>
+          <p>Tomamos ou abrimos laterais de calças, vestidos e blusas para que o caimento fique perfeito ao seu corpo, preservando a modelagem original.</p>
+          <div class="price-badge">A partir de <span>R$ 55</span></div>
+        </div>
+
+        <div class="conserto-card">
+          <div class="conserto-icon">🔗</div>
+          <h3>Troca de Zíperes</h3>
+          <p>Substituição de zíperes travados, quebrados ou oxidados em calças, vestidos, bolsas e jaquetas. Usamos zíperes de qualidade compatíveis com a peça.</p>
+          <div class="price-badge">A partir de <span>R$ 50</span></div>
+        </div>
+
+        <div class="conserto-card">
+          <div class="conserto-icon">🧵</div>
+          <h3>Costura e Remendos</h3>
+          <p>Fechamos rasgos, refazemos costuras abertas e reparamos furos discretamente — com linha combinada e ponto invisível sempre que possível.</p>
+          <div class="price-badge">A partir de <span>R$ 30</span></div>
+        </div>
+
+        <div class="conserto-card">
+          <div class="conserto-icon">👗</div>
+          <h3>Restauração de Vestidos</h3>
+          <p>Restauramos vestidos de festa, casamento e formatura: substituição de forros, reparo de bordados, ajuste de alças e reforço de estrutura interna.</p>
+          <div class="price-badge">A partir de <span>R$ 120</span></div>
+        </div>
+
+        <div class="conserto-card">
+          <div class="conserto-icon">🪄</div>
+          <h3>Reformas Criativas</h3>
+          <p>Transformamos peças que você ama mas não usa mais: encurtamentos modernos, mudança de decote, adição de detalhes ou reaproveitamento de tecido.</p>
+          <div class="price-badge">A partir de <span>R$ 80</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PRICING TABLE ── -->
+  <section class="pricing-section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Referência de valores</span>
+        <h2>Tabela de preços</h2>
+        <p>Valores indicativos — o orçamento final é confirmado após avaliação presencial da peça.</p>
+      </div>
+
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th>Serviço</th>
+            <th>Descrição</th>
+            <th>Valor a partir de</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Bainha simples</td>
+            <td>Calça, saia ou vestido — dobra manual ou com entretela</td>
+            <td>R$ 40</td>
+          </tr>
+          <tr>
+            <td>Bainha jeans</td>
+            <td>Preservando ou não a costura original (vintage)</td>
+            <td>R$ 50</td>
+          </tr>
+          <tr>
+            <td>Ajuste de cós</td>
+            <td>Tomada ou abertura de cós em calças e saias</td>
+            <td>R$ 55</td>
+          </tr>
+          <tr>
+            <td>Ajuste lateral vestido</td>
+            <td>Tomada em ambos os lados, com forro</td>
+            <td>R$ 70</td>
+          </tr>
+          <tr>
+            <td>Troca de zíper calça</td>
+            <td>Zíper YKK de alta durabilidade</td>
+            <td>R$ 50</td>
+          </tr>
+          <tr>
+            <td>Troca de zíper vestido</td>
+            <td>Invisível ou comum, com reforço de borda</td>
+            <td>R$ 65</td>
+          </tr>
+          <tr>
+            <td>Remendo / costura aberta</td>
+            <td>Reparo pontual com linha combinada</td>
+            <td>R$ 30</td>
+          </tr>
+          <tr>
+            <td>Troca de forro</td>
+            <td>Substituição completa de forro em vestidos e blazers</td>
+            <td>R$ 110</td>
+          </tr>
+          <tr>
+            <td>Restauração de vestido de festa</td>
+            <td>Avaliação completa + reparos múltiplos</td>
+            <td>R$ 120</td>
+          </tr>
+          <tr>
+            <td>Reforma criativa</td>
+            <td>Transformação personalizada — orçamento sob consulta</td>
+            <td>R$ 80</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="table-note">
+        ⚠️ Os valores acima são referências iniciais. Peças com bordados, tecidos especiais (seda, tule, renda), forros duplos ou reparos múltiplos podem ter ajuste de preço após a avaliação. Orçamento sempre confirmado antes do início do serviço — sem surpresas.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Sua peça merece uma segunda vida</h2>
+      <p>Entre em contato para avaliar seu conserto e receber um orçamento sem compromisso.</p>
+      <div class="btn-group">
+        <a class="btn btn-gold" href="#" data-wa-link data-wa-text="Olá! Gostaria de solicitar um conserto e receber um orçamento." target="_blank" rel="noopener">
+          <span>Solicitar pelo WhatsApp</span>
+        </a>
+        <a class="btn btn-outline" href="index.html#contato" style="color:#fff; border-color:rgba(255,255,255,0.3);">
+          <span>Outros contatos</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div class="floating-wa">
+  <a href="#" data-wa-link data-wa-text="Olá! Quero solicitar um conserto." target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/img/logo/logo_footer.png" alt="Thais Mahasin" class="footer-logo" />
+        <p>Moda feminina exclusiva com peças prontas e sob medida. Elegância, qualidade e atendimento verdadeiramente personalizado.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="index.html#sobre">Sobre</a></li>
+          <li><a href="index.html#servicos">Serviços</a></li>
+          <li><a href="pronta-entrega.html">Pronta Entrega</a></li>
+          <li><a href="index.html#sob-medida">Sob Medida</a></li>
+          <li><a href="consertos.html">Consertos</a></li>
+          <li><a href="index.html#depoimentos">Depoimentos</a></li>
+          <li><a href="index.html#contato">Contato</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="#" data-wa-link data-wa-display target="_blank">(21) 99631-3804</a></li>
+          <li><a href="#" data-email-link data-email-display>contato@thaismahasin.com.br</a></li>
+          <li><a href="#" data-instagram-link data-instagram-display target="_blank">@thais_mahasin</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Thais Mahasin. Todos os direitos reservados.</p>
+      <p>Feito com <span style="color:var(--gold-light)">♥</span> para mulheres únicas</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ── Topbar scroll effect
+  const topbar = document.getElementById('topbar');
+  window.addEventListener('scroll', () => {
+    topbar.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // ── Mobile menu
+  function openMobileMenu() {
+    document.getElementById('mobileMenu').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMobileMenu() {
+    document.getElementById('mobileMenu').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // ── WhatsApp / Email / Instagram links (same pattern as sister pages)
+  (function () {
+    const PHONE = '5521996313804';
+    const EMAIL = 'contato@thaismahasin.com.br';
+    const INSTAGRAM = 'https://instagram.com/thais_mahasin';
+
+    document.querySelectorAll('[data-wa-link]').forEach(el => {
+      const text = el.dataset.waText || 'Olá!';
+      el.href = `https://wa.me/${PHONE}?text=${encodeURIComponent(text)}`;
+      if (el.hasAttribute('data-wa-display')) el.textContent = `(21) 99631-3804`;
+    });
+
+    document.querySelectorAll('[data-email-link]').forEach(el => {
+      el.href = `mailto:${EMAIL}`;
+      if (el.hasAttribute('data-email-display')) el.textContent = EMAIL;
+    });
+
+    document.querySelectorAll('[data-instagram-link]').forEach(el => {
+      el.href = INSTAGRAM;
+      if (el.hasAttribute('data-instagram-display')) el.textContent = '@thais_mahasin';
+    });
+  })();
+</script>
+
+</body>
+</html>
