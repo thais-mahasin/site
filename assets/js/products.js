@@ -301,9 +301,221 @@ window.PRODUCTS = [
     { type: 'video', src: 'assets/media/products/vestido-rose-halter/desfile.mp4', poster: 'assets/media/products/vestido-rose-halter/editorial.png', alt: 'Vídeo do Vestido Rosé Halter' }
   ]
   },
- 
+
+  {
+    id: 'p9',
+    slug: 'conjunto-rosa-urbano',
+    name: 'Conjunto Rosé Urbano',
+    line: 'Linha Rosé Urbano',
+    category: 'conjuntos',
+    categoryLabel: 'Conjunto',
+    price: 390,
+    availability: 'Disponível',
+    shortDescription: 'Conjunto em tom rosé com blusa de sobreposição frontal e calça pantalona de caimento amplo.',
+    description: 'Peça contemporânea com leitura leve e sofisticada, ideal para propostas elegantes com frescor urbano. A composição alongada valoriza a silhueta com suavidade e presença autoral.',
+    colors: [
+      { name: 'Rosé claro', hex: '#d7b8b2' }
+    ],
+    sizes: ['Sob consulta'],
+    materials: ['Alfaiataria leve', 'Acabamento premium'],
+    highlights: [
+      'Blusa com sobreposição frontal',
+      'Calça pantalona ampla',
+      'Paleta rosé delicada',
+      'Elegância leve e contemporânea'
+    ],
+    story: 'O Conjunto Rosé Urbano nasce do encontro entre delicadeza e desenho limpo. A cor suave, somada à construção fluida da peça, cria uma presença refinada, feminina e atual.',
+    gallery: [
+      { type: 'image', src: 'assets/media/products/conjunto_rosa_urbano/editorial.jpg', alt: 'Conjunto Rosé Urbano em foto editorial' },
+      { type: 'image', src: 'assets/media/products/conjunto_rosa_urbano/atelier.png', alt: 'Conjunto Rosé Urbano no manequim' },
+      { type: 'video', src: 'assets/media/products/conjunto_rosa_urbano/desfile.mp4', poster: 'assets/media/products/conjunto_rosa_urbano/editorial.jpg', alt: 'Vídeo do Conjunto Rosé Urbano' }
+    ]
+  },
+  {
+    id: 'p10',
+    slug: 'vestido-bege_-botoes',
+    name: 'Vestido Bege Botões',
+    line: 'Linha Bege Botões',
+    category: 'midi',
+    categoryLabel: 'Vestido midi',
+    price: 520,
+    availability: 'Disponível',
+    shortDescription: 'Vestido midi bege com modelagem ajustada, abotoamento frontal e recorte sem mangas.',
+    description: 'Modelo de estética limpa e sofisticada, com presença discreta e refinada. O desenho vertical dos botões e a silhueta alongada criam uma leitura elegante e atemporal.',
+    colors: [
+      { name: 'Bege areia', hex: '#d7c9b2' },
+      { name: 'Dourado suave', hex: '#b48b58' }
+    ],
+    sizes: ['Sob consulta'],
+    materials: ['Tecido estruturado', 'Botões metálicos'],
+    highlights: [
+      'Abotoamento frontal aparente',
+      'Silhueta midi alongada',
+      'Modelagem sem mangas',
+      'Visual clean e refinado'
+    ],
+    story: 'O Vestido Bege Botões foi pensado para uma elegância silenciosa. Sua construção reta, a paleta neutra e os detalhes frontais traduzem sofisticação com naturalidade e versatilidade.',
+    gallery: [
+      { type: 'image', src: 'assets/media/products/vestido_bege_botoes/editorial.jpg', alt: 'Vestido Bege Botões em foto editorial' },
+      { type: 'image', src: 'assets/media/products/vestido_bege_botoes/atelier.png', alt: 'Vestido Bege Botões no manequim' },
+      { type: 'video', src: 'assets/media/products/vestido_bege_botoes/desfile.mp4', poster: 'assets/media/products/vestido_bege_botoes/editorial.jpg', alt: 'Vídeo do Vestido Bege Botões' }
+    ]
+  },
+  {
+    id: 'p11',
+    slug: 'vestido-branco-assimetrico',
+    name: 'Vestido Branco Assimétrico',
+    line: 'Linha Branco Assimétrico',
+    category: 'festa',
+    categoryLabel: 'Vestido de festa',
+    price: 950,
+    availability: 'Disponível',
+    shortDescription: 'Vestido branco curto com um ombro só, drapeado lateral e barra assimétrica.',
+    description: 'Peça autoral de presença minimalista e sofisticada. A assimetria da construção valoriza o movimento do corpo e cria um visual contemporâneo, leve e marcante.',
+    colors: [
+      { name: 'Branco', hex: '#f3f3f1' }
+    ],
+    sizes: ['Sob consulta'],
+    materials: ['Malha estruturada', 'Acabamento premium'],
+    highlights: [
+      'Decote de um ombro só',
+      'Drapeado lateral elegante',
+      'Barra assimétrica',
+      'Leitura moderna e sofisticada'
+    ],
+    story: 'O Vestido Branco Assimétrico traduz elegância com gesto escultural. Sua construção limpa destaca a silhueta e entrega uma feminilidade contemporânea, precisa e muito refinada.',
+    gallery: [
+      { type: 'image', src: 'assets/media/products/vestido_branco_assimetrico/editorial.jpg', alt: 'Vestido Branco Assimétrico em foto editorial' },
+      { type: 'image', src: 'assets/media/products/vestido_branco_assimetrico/atelier.png', alt: 'Vestido Branco Assimétrico no manequim' },
+      { type: 'video', src: 'assets/media/products/vestido_branco_assimetrico/desfile.mp4', poster: 'assets/media/products/vestido_branco_assimetrico/editorial.jpg', alt: 'Vídeo do Vestido Branco Assimétrico' }
+    ]
+  },
+  {
+    id: 'p12',
+    slug: 'vestido-cinza-transparente',
+    name: 'Vestido Cinza Transparente',
+    line: 'Linha Cinza Transparente',
+    category: 'festa',
+    categoryLabel: 'Vestido de festa',
+    price: 1390,
+    availability: 'Disponível',
+    shortDescription: 'Vestido longo em cinza translúcido com caimento fluido, mangas leves e transparência delicada.',
+    description: 'Modelo etéreo e sofisticado, pensado para produções que pedem leveza visual e presença elegante. A transparência sutil e a fluidez do tecido criam um efeito delicado e autoral.',
+    colors: [
+      { name: 'Cinza lavanda', hex: '#9a95a8' },
+      { name: 'Cinza fumê', hex: '#625d69' }
+    ],
+    sizes: ['Sob consulta'],
+    materials: ['Tule leve', 'Forro fluido'],
+    highlights: [
+      'Transparência delicada',
+      'Caimento longo e fluido',
+      'Mangas leves com movimento',
+      'Visual etéreo e sofisticado'
+    ],
+    story: 'O Vestido Cinza Transparente nasce da ideia de leveza em movimento. A sobreposição translúcida envolve a silhueta com suavidade e cria uma presença poética, elegante e contemporânea.',
+    gallery: [
+      { type: 'image', src: 'assets/media/products/vestido_cinza_transparente/editorial.jpg', alt: 'Vestido Cinza Transparente em foto editorial' },
+      { type: 'image', src: 'assets/media/products/vestido_cinza_transparente/atelier.png', alt: 'Vestido Cinza Transparente no manequim' },
+      { type: 'video', src: 'assets/media/products/vestido_cinza_transparente/desfile.mp4', poster: 'assets/media/products/vestido_cinza_transparente/editorial.jpg', alt: 'Vídeo do Vestido Cinza Transparente' }
+    ]
+  },
+  {
+    id: 'p13',
+    slug: 'vestido-colorido-transparente',
+    name: 'Vestido Colorido Transparente',
+    line: 'Linha Colorido Transparente',
+    category: 'festa',
+    categoryLabel: 'Vestido de festa',
+    price: 1590,
+    availability: 'Disponível',
+    shortDescription: 'Vestido longo translúcido com degradê colorido, mangas contrastantes e caimento leve.',
+    description: 'Peça de forte identidade visual, com leitura artística e sofisticada. A composição cromática, unida à transparência do tecido, cria um visual expressivo, luminoso e contemporâneo.',
+    colors: [
+      { name: 'Dourado suave', hex: '#d8b264' },
+      { name: 'Coral rosado', hex: '#db826a' },
+      { name: 'Azul petróleo suave', hex: '#5c97a6' }
+    ],
+    sizes: ['Sob consulta'],
+    materials: ['Tule leve', 'Acabamento translúcido'],
+    highlights: [
+      'Degradê colorido marcante',
+      'Mangas com contraste de cor',
+      'Silhueta longa e fluida',
+      'Estética autoral e expressiva'
+    ],
+    story: 'O Vestido Colorido Transparente foi criado para quem deseja vestir cor com sofisticação. A mistura de tons e a leve transparência revelam uma peça vibrante, sensível e memorável.',
+    gallery: [
+      { type: 'image', src: 'assets/media/products/vestido_colorido_transparente/editorial.jpg', alt: 'Vestido Colorido Transparente em foto editorial' },
+      { type: 'image', src: 'assets/media/products/vestido_colorido_transparente/atelier.png', alt: 'Vestido Colorido Transparente no manequim' },
+      { type: 'video', src: 'assets/media/products/vestido_colorido_transparente/desfile.mp4', poster: 'assets/media/products/vestido_colorido_transparente/editorial.jpg', alt: 'Vídeo do Vestido Colorido Transparente' }
+    ]
+  },
+  {
+    id: 'p14',
+    slug: 'vestido-preto-assimetrico',
+    name: 'Vestido Preto Assimétrico',
+    line: 'Linha Preto Assimétrico',
+    category: 'festa',
+    categoryLabel: 'Vestido de festa',
+    price: 980,
+    availability: 'Disponível',
+    shortDescription: 'Vestido preto curto com brilho acetinado, manga única e drapeado lateral.',
+    description: 'Modelo de presença marcante, com construção escultural e elegância contemporânea. O brilho sutil do tecido reforça a sofisticação da peça sem perder a leitura minimalista.',
+    colors: [
+      { name: 'Preto', hex: '#151515' }
+    ],
+    sizes: ['Sob consulta'],
+    materials: ['Cetim encorpado', 'Acabamento premium'],
+    highlights: [
+      'Manga única elegante',
+      'Drapeado lateral marcante',
+      'Brilho acetinado discreto',
+      'Visual noturno sofisticado'
+    ],
+    story: 'O Vestido Preto Assimétrico foi desenhado para uma presença segura e refinada. Sua assimetria precisa, aliada ao brilho contido do tecido, cria uma peça intensa, feminina e atemporal.',
+    gallery: [
+      { type: 'image', src: 'assets/media/products/vestido_preto_assimetrico/editorial.jpg', alt: 'Vestido Preto Assimétrico em foto editorial' },
+      { type: 'image', src: 'assets/media/products/vestido_preto_assimetrico/atelier.png', alt: 'Vestido Preto Assimétrico no manequim' },
+      { type: 'video', src: 'assets/media/products/vestido_preto_assimetrico/desfile.mp4', poster: 'assets/media/products/vestido_preto_assimetrico/editorial.jpg', alt: 'Vídeo do Vestido Preto Assimétrico' }
+    ]
+  },
+  {
+    id: 'p15',
+    slug: 'vestido-preto-botoes',
+    name: 'Vestido Preto Botões',
+    line: 'Linha Preto Botões',
+    category: 'midi',
+    categoryLabel: 'Vestido midi',
+    price: 560,
+    availability: 'Disponível',
+    shortDescription: 'Vestido midi preto sem mangas com abotoamento frontal e fenda sutil.',
+    description: 'Peça de desenho limpo e sofisticado, com leitura urbana e elegante. Os botões frontais alongam a silhueta e acrescentam um ponto de brilho discreto à composição.',
+    colors: [
+      { name: 'Preto', hex: '#141414' },
+      { name: 'Dourado suave', hex: '#b18b56' }
+    ],
+    sizes: ['Sob consulta'],
+    materials: ['Alfaiataria acetinada', 'Botões metálicos'],
+    highlights: [
+      'Abotoamento frontal marcante',
+      'Modelagem midi sem mangas',
+      'Fenda frontal discreta',
+      'Visual elegante e versátil'
+    ],
+    story: 'O Vestido Preto Botões aposta na força do essencial bem desenhado. A silhueta reta, o acabamento escuro e os detalhes metálicos criam uma peça sofisticada, moderna e muito fácil de destacar.',
+    gallery: [
+      { type: 'image', src: 'assets/media/products/vestido_preto_botoes/editorial.jpg', alt: 'Vestido Preto Botões em foto editorial' },
+      { type: 'image', src: 'assets/media/products/vestido_preto_botoes/atelier.png', alt: 'Vestido Preto Botões no manequim' },
+      { type: 'video', src: 'assets/media/products/vestido_preto_botoes/desfile.mp4', poster: 'assets/media/products/vestido_preto_botoes/editorial.jpg', alt: 'Vídeo do Vestido Preto Botões' }
+    ]
+  },
+
 ];
 
 window.getProductBySlug = function(slug) {
-  return window.PRODUCTS.find(product => product.slug === slug);
+  const normalize = value =>
+    (value || '').trim().toLowerCase().replaceAll('_', '-');
+
+  return window.PRODUCTS.find(product => normalize(product.slug) === normalize(slug));
 };
