@@ -510,7 +510,36 @@ window.PRODUCTS = [
       { type: 'video', src: 'assets/media/products/vestido_preto_botoes/desfile.mp4', poster: 'assets/media/products/vestido_preto_botoes/editorial.jpg', alt: 'Vídeo do Vestido Preto Botões' }
     ]
   },
-
+  {
+	id: 'p16',
+	slug: 'conjunto-preto-rendado',
+	name: 'Conjunto Preto Rendado',
+	line: 'Linha Preto Rendado',
+	category: 'conjuntos',
+	categoryLabel: 'Conjunto',
+	price: 590,
+	availability: 'Disponível',
+	shortDescription: 'Conjunto preto com colete alongado de alfaiataria, amarração na cintura e saia longa rendada.',
+	description: 'Peça autoral de presença marcante, com contraste entre estrutura e transparência em uma leitura sofisticada. O colete alongado equilibra a delicadeza da renda e cria um visual noturno elegante e contemporâneo.',
+	colors: [
+		{ name: 'Preto', hex: '#111111' },
+		{ name: 'Café profundo', hex: '#3a2928' }
+	],
+	sizes: ['Sob consulta'],
+	materials: ['Alfaiataria estruturada', 'Renda translúcida'],
+	highlights: [
+	'Colete alongado sem mangas',
+	'Saia longa com renda',
+	'Amarração marcando a cintura',
+	'Visual noturno sofisticado'
+	],
+	story: 'O Conjunto Preto Rendado nasce do encontro entre força e delicadeza. A alfaiataria limpa do colete encontra a leve transparência da renda em uma composição feminina, intensa e refinada.',
+	gallery: [
+		{ type: 'image', src: 'assets/media/products/conjunto-preto-rendado/editorial.jpg', alt: 'Conjunto Preto Rendado em foto editorial' },
+		{ type: 'image', src: 'assets/media/products/conjunto-preto-rendado/atelier.png', alt: 'Conjunto Preto Rendado no manequim' },
+		{ type: 'video', src: 'assets/media/products/conjunto-preto-rendado/desfile.mp4', poster: 'assets/media/products/conjunto-preto-rendado/editorial.jpg', alt: 'Vídeo do Conjunto Preto Rendado' }
+	]
+ }
 ];
 
 window.getProductBySlug = function(slug) {
