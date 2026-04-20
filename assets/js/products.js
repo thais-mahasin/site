@@ -539,7 +539,37 @@ window.PRODUCTS = [
 		{ type: 'image', src: 'assets/media/products/conjunto-preto-rendado/atelier.png', alt: 'Conjunto Preto Rendado no manequim' },
 		{ type: 'video', src: 'assets/media/products/conjunto-preto-rendado/desfile.mp4', poster: 'assets/media/products/conjunto-preto-rendado/editorial.jpg', alt: 'Vídeo do Conjunto Preto Rendado' }
 	]
- }
+ },
+	 {
+		id: 'p17',
+		slug: 'vestido-preto-rendado',
+		name: 'Vestido Preto Rendado',
+		line: 'Linha Preto Rendado',
+		category: 'festa',
+		categoryLabel: 'Vestido de festa',
+		price: 1250,
+		availability: 'Disponível',
+		shortDescription: 'Vestido preto de festa com mangas rendadas translúcidas, corpo ajustado e saia assimétrica de presença marcante.',
+		description: 'Modelo autoral com leitura sofisticada e dramática, ideal para ocasiões noturnas em que a elegância precisa aparecer com personalidade. O contraste entre a estrutura acetinada e a renda delicada cria um visual refinado e memorável.',
+			colors: [
+						{ name: 'Preto', hex: '#111111' },
+						{ name: 'Grafite suave', hex: '#4a4a4f' }
+						],
+		sizes: ['Sob consulta'],
+		materials: ['Cetim encorpado', 'Renda translúcida'],
+		highlights: [
+						'Mangas longas rendadas',
+						'Corpo ajustado elegante',
+						'Saia assimétrica marcante',
+						'Visual noturno sofisticado'
+						],
+		story: 'O Vestido Preto Rendado foi pensado para uma presença feminina intensa e refinada. A renda delicada nas mangas encontra a construção escultural da saia em uma peça que combina dramaticidade, elegância e assinatura autoral.',
+		gallery: [
+					{ type: 'image', src: 'assets/media/products/vestido-preto-rendado/editorial.jpg', alt: 'Vestido Preto Rendado em foto editorial' },
+					{ type: 'image', src: 'assets/media/products/vestido-preto-rendado/atelier.jpg', alt: 'Vestido Preto Rendado no manequim' },
+					{ type: 'video', src: 'assets/media/products/vestido-preto-rendado/desfile.mp4', poster: 'assets/media/products/vestido-preto-rendado/editorial.jpg', alt: 'Vídeo do Vestido Preto Rendado' }
+					]
+	}
 ];
 
 window.getProductBySlug = function(slug) {
