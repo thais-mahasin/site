@@ -513,7 +513,7 @@ window.PRODUCTS = [
   {
 	id: 'p16',
 	slug: 'conjunto-preto-rendado',
-	name: 'Conjunto Preto Rendado',
+	name: 'Conjunto Preto Rendado I',
 	line: 'Linha Preto Rendado',
 	category: 'conjuntos',
 	categoryLabel: 'Conjunto',
@@ -542,14 +542,14 @@ window.PRODUCTS = [
  },
 	 {
 		id: 'p17',
-		slug: 'vestido-preto-rendado',
-		name: 'Vestido Preto Rendado',
+		slug: 'conjunto-preto-rendado2',
+		name: 'Conjunto Preto Rendado II',
 		line: 'Linha Preto Rendado',
-		category: 'festa',
-		categoryLabel: 'Vestido de festa',
+		category: 'conjuntos',
+		categoryLabel: 'Conjunto',
 		price: 1250,
 		availability: 'Disponível',
-		shortDescription: 'Vestido preto de festa com mangas rendadas translúcidas, corpo ajustado e saia assimétrica de presença marcante.',
+		shortDescription: 'Conjunto preto de festa com mangas rendadas translúcidas, corpo ajustado e saia assimétrica de presença marcante.',
 		description: 'Modelo autoral com leitura sofisticada e dramática, ideal para ocasiões noturnas em que a elegância precisa aparecer com personalidade. O contraste entre a estrutura acetinada e a renda delicada cria um visual refinado e memorável.',
 			colors: [
 						{ name: 'Preto', hex: '#111111' },
@@ -563,12 +563,44 @@ window.PRODUCTS = [
 						'Saia assimétrica marcante',
 						'Visual noturno sofisticado'
 						],
-		story: 'O Vestido Preto Rendado foi pensado para uma presença feminina intensa e refinada. A renda delicada nas mangas encontra a construção escultural da saia em uma peça que combina dramaticidade, elegância e assinatura autoral.',
+		story: 'O Conjunto Preto Rendado foi pensado para uma presença feminina intensa e refinada. A renda delicada nas mangas encontra a construção escultural da saia em uma peça que combina dramaticidade, elegância e assinatura autoral.',
 		gallery: [
-					{ type: 'image', src: 'assets/media/products/vestido-preto-rendado/editorial.jpg', alt: 'Vestido Preto Rendado em foto editorial' },
-					{ type: 'image', src: 'assets/media/products/vestido-preto-rendado/atelier.jpg', alt: 'Vestido Preto Rendado no manequim' },
-					{ type: 'video', src: 'assets/media/products/vestido-preto-rendado/desfile.mp4', poster: 'assets/media/products/vestido-preto-rendado/editorial.jpg', alt: 'Vídeo do Vestido Preto Rendado' }
+					{ type: 'image', src: 'assets/media/products/conjunto-preto-rendado2/editorial.jpg', alt: 'Conjunto Preto Rendado em foto editorial' },
+					{ type: 'image', src: 'assets/media/products/conjunto-preto-rendado2/atelier.jpg', alt: 'Conjunto Preto Rendado no manequim' },
+					{ type: 'video', src: 'assets/media/products/conjunto-preto-rendado2/desfile.mp4', poster: 'assets/media/products/conjunto-preto-rendado2/editorial.jpg', alt: 'Vídeo do Conjunto Preto Rendado' }
 					]
+	},
+	{
+		id: 'p18',
+		slug: 'vestido-colorido-florido',
+		name: 'Vestido Florido Aquarela',
+		line: 'Linha Florido Aquarela',
+		category: 'festa',
+		categoryLabel: 'Vestido de festa',
+		price: 890,
+		availability: 'Disponível',
+		shortDescription: 'Vestido curto tomara que caia com estampa floral em aquarela, caimento leve e barra assimétrica fluida.',
+		description: 'Modelo autoral de presença delicada e sofisticada, com construção fluida e visual marcante. A estampa floral em aquarela, aliada ao movimento leve do tecido, cria uma peça feminina, contemporânea e elegante.',
+		colors: [
+		  { name: 'Rosé suave', hex: '#d8b1a8' },
+		  { name: 'Azul petróleo suave', hex: '#5f7f86' },
+		  { name: 'Nude rosado', hex: '#ead7d1' }
+		],
+		sizes: ['Sob consulta'],
+		materials: ['Chiffon leve', 'Forro fluido'],
+		highlights: [
+		  'Decote tomara que caia',
+		  'Estampa floral em aquarela',
+		  'Caimento leve e solto',
+		  'Barra assimétrica delicada'
+		],
+		story: 'O Vestido Florido Aquarela foi pensado para transmitir leveza, frescor e sofisticação em uma linguagem visual delicada. A fluidez do tecido encontra a suavidade da estampa floral em uma peça feminina, elegante e memorável.',
+		gallery: [
+		  { type: 'image', src: 'assets/media/products/vestido-colorido-florido/editorial.jpg', alt: 'Vestido Florido Aquarela em foto editorial' },
+		  { type: 'image', src: 'assets/media/products/vestido-colorido-florido/atelier.png', alt: 'Vestido Florido Aquarela no manequim' },
+		  { type: 'video', src: 'assets/media/products/vestido-colorido-florido/desfile.mp4', poster: 'assets/media/products/vestido-colorido-florido/editorial.jpg', alt: 'Vídeo do Vestido Florido Aquarela' }
+		]	
+		
 	}
 ];
 
