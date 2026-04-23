@@ -577,7 +577,7 @@ window.PRODUCTS = [
 		line: 'Linha Florido Aquarela',
 		category: 'festa',
 		categoryLabel: 'Vestido de festa',
-		price: 890,
+		price: 350,
 		availability: 'Disponível',
 		shortDescription: 'Vestido curto tomara que caia com estampa floral em aquarela, caimento leve e barra assimétrica fluida.',
 		description: 'Modelo autoral de presença delicada e sofisticada, com construção fluida e visual marcante. A estampa floral em aquarela, aliada ao movimento leve do tecido, cria uma peça feminina, contemporânea e elegante.',
