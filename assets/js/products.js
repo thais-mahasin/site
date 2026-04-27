@@ -566,7 +566,7 @@ window.PRODUCTS = [
 		story: 'O Conjunto Preto Rendado foi pensado para uma presença feminina intensa e refinada. A renda delicada nas mangas encontra a construção escultural da saia em uma peça que combina dramaticidade, elegância e assinatura autoral.',
 		gallery: [
 					{ type: 'image', src: 'assets/media/products/conjunto-preto-rendado2/editorial.jpg', alt: 'Conjunto Preto Rendado em foto editorial' },
-					{ type: 'image', src: 'assets/media/products/conjunto-preto-rendado2/atelier.jpg', alt: 'Conjunto Preto Rendado no manequim' },
+					{ type: 'image', src: 'assets/media/products/conjunto-preto-rendado2/atelier.png', alt: 'Conjunto Preto Rendado no manequim' },
 					{ type: 'video', src: 'assets/media/products/conjunto-preto-rendado2/desfile.mp4', poster: 'assets/media/products/conjunto-preto-rendado2/editorial.jpg', alt: 'Vídeo do Conjunto Preto Rendado' }
 					]
 	},
